@@ -7,16 +7,14 @@
             <h1><a href="">Andrew Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 13.11.2019, 12:14</p>
-            <h2><a href="">Life is </a></h2>
-            <p>Life is not a beatiful.</p>
-        </div>
 
+        {% for post in posts %}
         <div>
-            <p>published: 13.11.2019, 12:14</p>
-            <h2><a href="">인생 최고 술 안주</a></h2>
-            <p>삼겹살 엔 위스키? ㅎ.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
         </div>
     </body>
 </html>
